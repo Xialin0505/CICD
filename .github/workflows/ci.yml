@@ -20,8 +20,9 @@ jobs:
       
     - name: Build the Docker image
       run: docker build -t cicd-pipeline .
-
     
-
+    - name: Retag image
+      run: docker tag cicd-pipeline:latest xialin0505/cicd-pipeline:latest
+    
     - name: Push the Docker image
       run: docker push xialin0505/cicd-pipeline:latest
